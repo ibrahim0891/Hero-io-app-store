@@ -3,11 +3,13 @@ import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router";
-import Hompage from "./Pages/home/Home.jsx";
-import AllApps from "./Pages/App/All-Apps.jsx";
-import InstalledAppPage from "./Pages/Installed/Installations.jsx";
-import AppDetails from "./Pages/App/App-details.jsx";
+import Hompage from "./Pages/home/Homepage.jsx";
+import AllApps from "./Pages/App/All-apps-page.jsx";
+import InstalledAppPage from "./Pages/Installed/Installed-app-page.jsx";
 import NotFound from "./Pages/not-found.jsx";
+import AppNotFound from "./Pages/app-not-found.jsx";
+import AppCountContext from "./context/appSearchResultCount.jsx";
+import AppDetailsPage from "./Pages/AppDetails/App-info-page.jsx";
 
 const router = createBrowserRouter([
     {
@@ -17,23 +19,29 @@ const router = createBrowserRouter([
             {
                 index: true,
                 path: "/",
-                element: <Hompage/>,
+                element: <Hompage />,
             },
             {
                 path: "/apps",
-                element:<AllApps/>,
+                element: <AllApps />,
             },
             {
                 path: "/installed",
-                element: <InstalledAppPage/>,
+                element: <InstalledAppPage />,
             },
             {
-                path: "/app-details",
-                element: <AppDetails/>,
+                path: "/app-details/:appId",
+                element: <AppDetailsPage />,
+                children: [
+                    {
+                        path: '*',
+                        element: <AppNotFound />
+                    }
+                ]
             },
             {
                 path: "*",
-                element: <NotFound/>,
+                element: <NotFound />,
             },
         ],
     },
@@ -41,8 +49,10 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById("root")).render(
     <StrictMode>
-        <RouterProvider router={router}>
-            <App />
-        </RouterProvider>
+        <AppCountContext>
+            <RouterProvider router={router}>
+                <App />
+            </RouterProvider>
+        </AppCountContext>
     </StrictMode>
 );

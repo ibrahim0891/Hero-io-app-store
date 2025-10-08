@@ -2,13 +2,13 @@ import React from "react";
 
 const HeroSection = () => {
     return (
-        <div className="mt-20">
+        <div className="mt-10 md:mt-20">
             <div className="space-y-4 my-10">
                 <div className="space-y-4">
-                    <h1 className="text-5xl font-bold text-center">
+                    <h1 className="text-4xl sm:text-5xl font-bold text-center px-8">
                         We Build <br /> <span className="text-indigo-500">Productive </span> Apps
                     </h1>
-                    <p className="text-center text-gray-600 max-w-5/6 m-auto leading-relaxed">
+                    <p className="text-center text-gray-600 max-w-5/6 m-auto text-xs sm:text-base leading-relaxed">
                         At HERO.IO , we craft innovative apps designed to make
                         everyday life simpler, smarter, and more exciting.Our
                         goal is to turn your ideas into digital experiences that
@@ -32,8 +32,8 @@ const HeroSection = () => {
                     </div>
                 </div>
             </div>
-            <div className="flex items-center justify-center">
-                <img src='/assets/hero.png' alt='' className="max-w-[600px]" />
+            <div className="flex items-center justify-center px-6">
+                <img src='/assets/hero.png' alt='' className="max-w-full md:max-w-[600px]" />
             </div>
         </div>
     );
