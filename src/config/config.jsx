@@ -5,7 +5,7 @@ import { CirclesFourIcon, DownloadSimpleIcon, HouseIcon } from "@phosphor-icons/
 let config = {
     // baseUrl: "http://192.168.0.10:5173",
     baseUrl: "http://localhost:5173",
-    loadingDelay: 3000,
+    loadingDelay: 400,
     navLinks: [
         {
             path: "/",

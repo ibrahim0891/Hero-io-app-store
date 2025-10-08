@@ -42,7 +42,7 @@ const AllApps = () => {
                     searchPromise={
                         query.length > 0
                             ? searchAppByTitle(query, 300)
-                            : getAllApps(2000)
+                            : getAllApps()
                     }
                 ></AppDisplaySection>
             </Suspense>

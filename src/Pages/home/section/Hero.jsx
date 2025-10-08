@@ -1,5 +1,25 @@
 import React from "react";
 
+
+export const AppStoreLogos = () => {
+    return <div className="flex items-center justify-center *:px-4 *:py-2 gap-3 *:bg-white *:text-black">
+        <div className="flex items-center justify-center gap-3 border border-gray-200 rounded-md">
+            <img
+                src='https://cdn1.iconfinder.com/data/icons/social-links/26/playstore-24.png'
+                alt=''
+            />
+            <span> Play store</span>
+        </div>
+        <div className="flex items-center justify-center gap-3 border border-gray-200 rounded-md">
+            <img
+                src='https://cdn0.iconfinder.com/data/icons/apple-apps/100/Apple_Store-24.png'
+                alt=''
+            />
+            <span> App store</span>
+        </div>
+    </div>
+}
+
 const HeroSection = () => {
     return (
         <div className="mt-10 md:mt-20">
@@ -15,22 +35,7 @@ const HeroSection = () => {
                         truly make an impact.
                     </p>
                 </div>
-                <div className="flex items-center justify-center *:px-4 *:py-2">
-                    <div className="flex items-center justify-center gap-3 border border-gray-200 rounded-md">
-                        <img
-                            src='https://cdn1.iconfinder.com/data/icons/social-links/26/playstore-24.png'
-                            alt=''
-                        />
-                        <span> Play store</span>
-                    </div>
-                    <div className="flex items-center justify-center gap-3 border border-gray-200 rounded-md">
-                        <img
-                            src='https://cdn0.iconfinder.com/data/icons/apple-apps/100/Apple_Store-24.png'
-                            alt=''
-                        />
-                        <span> App store</span>
-                    </div>
-                </div>
+                <AppStoreLogos/>
             </div>
             <div className="flex items-center justify-center px-6">
                 <img src='/assets/hero.png' alt='' className="max-w-full md:max-w-[600px]" />

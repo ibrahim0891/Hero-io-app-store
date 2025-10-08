@@ -1,17 +1,35 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 
 
 import { DownloadIcon, StarIcon } from '@phosphor-icons/react';
 import aveta from 'aveta';
-import React, { use } from 'react';
+import React, { use, useEffect, useState } from 'react';
 import AppNotFound from '../../app-not-found';
+import { storageMethods } from '../../../utils/localStorageManagement';
 
 const AppDetails = ({ appPromise }) => {
     let appData = use(appPromise)
+    let [isInstalled, setIsInstalled] = useState(false)
+    let [isInstalling, setIsInstalling] = useState(false)
     if (!appData) {
-        return <AppNotFound/>
+        return <AppNotFound />
     }
-    
-    let { image, downloads, ratingAvg, title, id, companyName, description, reviews, ratings } = appData
+
+    let { image, downloads, ratingAvg, title, id, companyName, description, reviews, ratings, size } = appData
+
+    useEffect(() => {
+        if (storageMethods.isInLocalStorage(id)) { 
+            setIsInstalled(true)
+        }
+    }, [])
+    let handleInstall = (id) => {
+        storageMethods.saveToLocalStorage(id)
+        setIsInstalling(true)
+        setTimeout(() => {
+            setIsInstalling(false)
+            setIsInstalled(true)
+        }, 3000);
+    }
 
     return (
         <section className='container-center py-16 space-y-8'>
@@ -26,7 +44,7 @@ const AppDetails = ({ appPromise }) => {
                         <h1 className='text-4xl'> {title}</h1>
                         <p className='text-lg'> Developed By- <span className='text-purple-700'>{companyName}</span></p>
                     </div>
-                    <div className='flex items-center gap-8'>
+                    <div className='flex items-center gap-8 justify-center md:justify-start'>
                         <div className='space-y-2 *:mx-auto md:*:mx-0'>
                             <img className='w-7 aspect-square' src="/assets/icon-downloads.png" alt="" />
                             <p className='text-xs'>Downloads</p>
@@ -44,7 +62,9 @@ const AppDetails = ({ appPromise }) => {
                         </div>
                     </div>
                     <div>
-                        <button className='px-8 py-4 bg-indigo-400 text-white rounded-md w-full md:w-auto'> Install now</button>
+                        <button disabled={isInstalled} className={`${isInstalled ? 'bg-gray-400 text-gray-200 cursor-not-allowed' : 'bg-indigo-400 text-white active:scale-90'} px-8 py-4  rounded-md w-full md:w-auto`} onClick={() => handleInstall(id)}>
+                            {isInstalling ? 'Installing...' :  isInstalled ? 'Installed' : ` Install now (${size}MB)`}
+                        </button>
                     </div>
                 </div>
             </div>

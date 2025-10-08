@@ -5,7 +5,7 @@ import React from "react";
 
 const Loading = () => {
     return (
-        <div className="container-center flex items-center justify-center aspect-square md:aspect-[3/1] ">
+        <div className="container-center flex items-center justify-center aspect-square md:aspect-video ">
             <Ring
                 size='40'
                 stroke='5'
