@@ -23,23 +23,23 @@ let AppCard = ({ app ,setRemovedId }) => {
         }, 2000);
     }
     
-    return <div className='bg-white p-4 md:p-6 flex items-center mb-6 space-x-3 md:space-x-6'>
+    return <div className='bg-white p-3 md:p-4 flex items-center mb-4 space-x-3 md:space-x-6 rounded-xl '>
        
-        <div className='w-12 md:w-24 rounded-xl md:rounded-2xl border border-gray-200 overflow-hidden'>
+        <div className='w-16 md:w-24 rounded-lg border border-gray-200 overflow-hidden'>
 
             <img src={image} alt="" className='w-full' />
         </div>
         <div className='flex-1 flex items-center justify-between '>
             <Link to={'/app-details/' + id}>
                 <div className=' space-y-1 md:space-y-3'>
-                    <h1 className=' text-sm sm:text-2xl hover:underline truncate'> {title} </h1>
+                    <h1 className=' text-sm sm:text-base md:text-2xl hover:underline truncate'> {title} </h1>
                     <div>
                         <div className='flex items-center font-sans text-sm '>
-                            <div className='hidden md:flex items-center justify-center  p-1 px-2 gap-2 border border-amber-200 bg-amber-50 text-amber-700 rounded-full mr-4'>
+                            <div className=' hidden p-0.5 md:flex items-center justify-center  md:p-1 px-2 gap-2 border border-amber-200 bg-amber-50 text-amber-700 rounded-full mr-4'>
                                 <span>{ratingAvg}</span>
                                 <StarIcon />
                             </div>
-                            <div className='hidden md:flex items-center  justify-center  p-1 px-2 gap-2 border rounded-full border-gray-200 mr-4'>
+                            <div className='flex p-0.5 md:flex items-center  justify-center  md:p-1 px-2 gap-2 border rounded-full border-gray-200 mr-4'>
                                 <span>{aveta(downloads)} </span>
                                 <DownloadSimpleIcon />
                             </div>

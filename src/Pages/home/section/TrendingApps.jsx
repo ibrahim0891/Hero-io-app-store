@@ -19,7 +19,7 @@ const TrendingApps = () => {
                 }
             />
             <div>
-                <div className='grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-8 md:gap-10 gap-6 sm:gap-8'>
+                <div className='grid grid-cols-2 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-4 2xl:grid-cols-8 md:gap-10 gap-6 sm:gap-8'>
                     {trendingAppList.map((app, index) => {
                         return <AppCard key={index} app={app} />;
                     })}

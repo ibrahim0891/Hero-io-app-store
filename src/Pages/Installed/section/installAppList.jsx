@@ -32,8 +32,8 @@ const InstalledAppList = ({ appListPromise }) => {
 
     if (AppDataList.length == 0) {
         return <div className='px-12 py-8'>
-            <img src="https://cdn3.iconfinder.com/data/icons/business-people-40/327/Flat_Blue-09-02-512.png" alt="" className='m-auto max-w-2xs'/>
-            <h1 className='text-lg font-semibold text-center my-2'> You haven't installed any app yet </h1> 
+            <img src="https://cdn3.iconfinder.com/data/icons/business-people-40/327/Flat_Blue-09-02-512.png" alt="" className='m-auto max-w-2xs' />
+            <h1 className='text-lg font-semibold text-center my-2'> You haven't installed any app yet </h1>
             <p className='text-gray-500 text-center'> Try installing an app</p>
         </div>
     }
@@ -42,6 +42,12 @@ const InstalledAppList = ({ appListPromise }) => {
         let type = e.target.value;
 
         switch (type) {
+            case 'dlAsc':
+                setAppData([...AppDataList].sort((a, b) => a.downloads - b.downloads))
+                break;
+            case 'dlDsc':
+                setAppData([...AppDataList].sort((a, b) => b.downloads - a.downloads))
+                break;
             case 'asc':
                 setAppData([...AppDataList].sort((a, b) => a.size - b.size))
                 break;
@@ -59,20 +65,23 @@ const InstalledAppList = ({ appListPromise }) => {
         }
     }
 
-    
+
 
     return (
-        <div className='container-center'>
-            <div className='flex flex-col-reverse md:flex-row gap-4 items-center justify-between my-10 container-center'>
+        <div className='container-center mb-14'>
+            <div className='flex flex-col-reverse md:flex-row gap-4 items-center justify-between my-10 container-center '>
 
                 <AppCount />
 
                 <form className=''>
-                    <div className='flex items-center justify-center border border-gray-300 bg-white rounded-md px-5 py-3'>
+                    <div className='flex items-center justify-center border border-gray-300 bg-white rounded-md px-5 py-3 '>
                         <span> Sort by:  </span>
                         <select onChange={(e) => handleChange(e)} className='focus:outline-none'>
-                            <option value="asc"> Low - Hight</option>
-                            <option value="dsc">High - Low</option>
+                            <option value="" disabled> Sort</option>
+                            <option value="dlAsc">  Low-high </option>
+                            <option value="dlDsc">  High-Low</option>
+                            <option value="asc">    Size(asc) </option>
+                            <option value="dsc">  Size(dsc)</option>
                             <option value="ascAlpha">A - z</option>
                             <option value="dscAlpha">Z - a</option>
                         </select>
