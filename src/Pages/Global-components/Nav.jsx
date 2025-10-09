@@ -6,7 +6,7 @@ import { GithubIcon } from "lucide-react";
 import config from "../../config/config.jsx";
 
 const Nav = () => {
-    const {navLinks} = config
+    const { navLinks } = config
     return (
         <div className="bg-white/80 backdrop-blur-lg sticky top-0">
             <div className='flex items-center justify-between py-4 container-center '>
@@ -28,11 +28,13 @@ const Nav = () => {
                         );
                     })}
                 </nav>
-              
-                <Button className={'flex items-center justify-center gap-4'}>
-                    <GithubIcon/>
-                    <span className="hidden sm:inline"> Contribute</span>
-                </Button>
+
+                <a href="https://github.com/ibrahim0891" title="Visit GitHub Profile">
+                    <Button className={'flex items-center justify-center gap-4'}>
+                        <GithubIcon />
+                        <span className="hidden sm:inline"> Contribute</span>
+                    </Button>
+                </a>
             </div>
         </div>
     );

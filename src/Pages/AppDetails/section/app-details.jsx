@@ -6,6 +6,10 @@ import aveta from 'aveta';
 import React, { use, useEffect, useState } from 'react';
 import AppNotFound from '../../app-not-found';
 import { storageMethods } from '../../../utils/localStorageManagement';
+import { Cell, ResponsiveContainer, Tooltip, XAxis, YAxis , BarChart, Bar } from 'recharts';
+import InLineLoader from '../../Global-components/InlineLoader';
+import toast from 'react-hot-toast';
+ 
 
 const AppDetails = ({ appPromise }) => {
     let appData = use(appPromise)
@@ -26,6 +30,7 @@ const AppDetails = ({ appPromise }) => {
         storageMethods.saveToLocalStorage(id)
         setIsInstalling(true)
         setTimeout(() => {
+            toast.success(title + ' installed!')
             setIsInstalling(false)
             setIsInstalled(true)
         }, 3000);
@@ -63,12 +68,32 @@ const AppDetails = ({ appPromise }) => {
                     </div>
                     <div>
                         <button disabled={isInstalled} className={`${isInstalled ? 'bg-gray-400 text-gray-200 cursor-not-allowed' : 'bg-indigo-400 text-white active:scale-90'} px-8 py-4  rounded-md w-full md:w-auto`} onClick={() => handleInstall(id)}>
-                            {isInstalling ? 'Installing...' :  isInstalled ? 'Installed' : ` Install now (${size}MB)`}
+                            {isInstalling ? <span className='flex items-center justify-center gap-3'> <InLineLoader color={'white'}/> Installing... </span> :  isInstalled ? 'Installed' : ` Install now (${size}MB)`}
                         </button>
                     </div>
                 </div>
             </div>
-            <div></div>
+            <div>
+                <ResponsiveContainer width="100%" height={300}>
+                    <BarChart
+                        data={[...ratings].reverse()}
+                        layout="vertical"
+                        margin={{ top: 10, right: 20, left: 20, bottom: 10 }}
+                    >
+                        <XAxis type="number"  dataKey='count' />
+                        <YAxis type="category" dataKey="name" />
+                        <Tooltip />
+                        <Bar dataKey="count" radius={[5, 5, 5, 5]}>
+                            {ratings.map((entry, index) => (
+                                <Cell
+                                    key={`cell-${index}`}
+                                    fill='#6e5dff'
+                                />
+                            ))}
+                        </Bar>
+                    </BarChart>
+                </ResponsiveContainer>
+            </div>
             <div className='space-y-5'>
                 <h1 className='text-2xl font-semibold'> Description</h1>
                 <p className='text-gray-500 leading-relaxed whitespace-pre-wrap max-w-4xl '>

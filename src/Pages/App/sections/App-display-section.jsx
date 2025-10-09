@@ -2,11 +2,12 @@
 import { use, useEffect } from "react";
 import AppCard from "../../Global-components/App-card";
 import { useCountContext } from "../../../context/appSearchResultCount";
+import toast from "react-hot-toast";
 
 const AppDisplaySection = ({ searchPromise }) => {
     let result = use(searchPromise);
     const { setCount } = useCountContext()
-
+    
     if (result.length == 0) {
         setCount(0)
         return <div className="text-center mb-14 space-y-3">
@@ -17,7 +18,7 @@ const AppDisplaySection = ({ searchPromise }) => {
     }
 
     useEffect(() => {
-        setCount(result.length)
+        setCount(result.length) 
     }, [result])
 
 
