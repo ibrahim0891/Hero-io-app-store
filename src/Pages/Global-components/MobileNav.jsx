@@ -24,7 +24,7 @@ const MobileNav = () => {
                             <span>
                                 {nav.icon}
                             </span>
-                            <span className='text-xs hidden sm:inline'>
+                            <span className='text-xs   sm:inline'>
                                 {nav.label}
                             </span>
                         </NavLink>
