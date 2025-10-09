@@ -12,8 +12,8 @@ const AppDetailsPage = () => {
     
     let appPromise = getAppById(appId)
     return (
-        <div className='max-w-4x m-auto'>
-             <Suspense fallback={<Loading/>}>
+        <div className='max-w-4x m-auto min-h-screen flex items-center justify-center'>
+             <Suspense fallback={<Loading.LoadingZoomie/>}>
                 <AppDetails appPromise={appPromise}></AppDetails>
              </Suspense>
         </div>

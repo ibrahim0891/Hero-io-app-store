@@ -10,6 +10,7 @@ import NotFound from "./Pages/not-found.jsx";
 import AppNotFound from "./Pages/app-not-found.jsx";
 import AppCountContext from "./context/appSearchResultCount.jsx";
 import AppDetailsPage from "./Pages/AppDetails/App-info-page.jsx";
+import GloabalError from "./Pages/Global-components/GloabalError.jsx";
 
 const router = createBrowserRouter([
     {
@@ -44,6 +45,7 @@ const router = createBrowserRouter([
                 element: <NotFound />,
             },
         ],
+        errorElement : <GloabalError/>
     },
 ]);
 

@@ -7,9 +7,9 @@ import Loading from "../Global-components/LoadingSection";
 const Hompage = () => {
     return (
         <div className=' '>
-            <HeroSection />
+            <HeroSection />  
             <Statistics />
-            <Suspense fallback={<Loading />}>
+            <Suspense fallback={<Loading.LoadingRing />}>
                 <TrendingApps />
             </Suspense>
         </div>

@@ -1,7 +1,7 @@
 
 
 
-import { DownloadSimpleIcon, StarIcon } from '@phosphor-icons/react';
+import { DownloadSimpleIcon, ImageBrokenIcon, StarIcon } from '@phosphor-icons/react';
 import aveta from 'aveta';
 import { Link } from 'react-router';
 
@@ -9,8 +9,8 @@ import { Link } from 'react-router';
 const AppCard = ({ app }) => {
     let { image, downloads, ratingAvg, title  ,  id } = app;
     return (
-        <Link to={"/app-details/"+id}>
-            <div className='bg-white aspect-square rounded-4xl overflow-hidden'>
+        <Link to={"/app-details/"+id} className='hover:scale-105 transition-all'>
+            <div className='bg-white/70 border-gray-300 border aspect-square rounded-4xl overflow-hidden'>
                 <img src={image} alt='' className='w-full' />
             </div>
             <div className='p-2'>

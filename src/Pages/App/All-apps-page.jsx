@@ -37,7 +37,7 @@ const AllApps = () => {
                     </div>
                 </form>
             </div>
-            <Suspense fallback={<Loading />}>
+            <Suspense fallback={<Loading.LoadingZoomie />}>
                 <AppDisplaySection
                     searchPromise={
                         query.length > 0

@@ -28,7 +28,7 @@ const InstalledAppPage = () => {
             />
 
           
-            <Suspense fallback={<Loading/>}>
+            <Suspense fallback={<Loading.LoadingZoomie/>}>
                 <InstalledAppList setSavedApp={setSavedApp} appListPromise={getAppByIds(savedApps)}/>
             </Suspense>
         </div>

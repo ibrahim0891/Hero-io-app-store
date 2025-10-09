@@ -52,7 +52,7 @@ let AppCard = ({ app ,setRemovedId }) => {
             </Link>
             <div>
                 <button className='bg-red-50 text-red-800 px-3 md:px-6 py-3 rounded-md cursor-pointer' onClick={() => handleUninstall(id)}>
-                    {isUninstalling ? <span className='flex items-center justify-center gap-3'> <InLineLoader color={'red'} /> <span className="hidden md:inline"> Removing</span> </span> : <span> <TrashIcon className="sm:hidden"/> <p className="hidden md:block"> Uninstall </p>  </span>}
+                    {isUninstalling ? <span className='flex items-center justify-center gap-3'> <InLineLoader color={'red'} /> <span className="hidden md:inline"> Removing</span> </span> : <span> <TrashIcon className="md:hidden"/> <p className="hidden md:block"> Uninstall </p>  </span>}
                 </button>
             </div>
         </div>

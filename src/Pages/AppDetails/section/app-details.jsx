@@ -68,12 +68,13 @@ const AppDetails = ({ appPromise }) => {
                     </div>
                     <div>
                         <button disabled={isInstalled} className={`${isInstalled ? 'bg-gray-400 text-gray-200 cursor-not-allowed' : 'bg-indigo-400 text-white active:scale-90'} px-8 py-4  rounded-md w-full md:w-auto`} onClick={() => handleInstall(id)}>
-                            {isInstalling ? <span className='flex items-center justify-center gap-3'> <InLineLoader color={'white'}/> Installing... </span> :  isInstalled ? 'Installed' : ` Install now (${size}MB)`}
+                            {isInstalling ? <span className='flex items-center justify-center gap-3 cursor-progress'> <InLineLoader color={'white'}/> Installing... </span> :  isInstalled ? 'Installed' : ` Install now (${size}MB)`}
                         </button>
                     </div>
                 </div>
             </div>
             <div>
+                <h1 className='text-2xl font-semibold my-4'> Reviews </h1>
                 <ResponsiveContainer width="100%" height={300}>
                     <BarChart
                         data={[...ratings].reverse()}

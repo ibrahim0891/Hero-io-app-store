@@ -8,7 +8,7 @@ import config from "../../config/config.jsx";
 const Nav = () => {
     const { navLinks } = config
     return (
-        <div className="bg-white/80 backdrop-blur-lg sticky top-0">
+        <div className="bg-white/80 backdrop-blur-lg sticky top-0 z-50">
             <div className='flex items-center justify-between py-4 container-center '>
                 <Link to={"/"}>
                     <Logo />
