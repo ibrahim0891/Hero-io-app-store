@@ -3,14 +3,15 @@ import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router";
-import Hompage from "./Pages/home/Homepage.jsx";
-import AllApps from "./Pages/App/All-apps-page.jsx";
+ 
 import InstalledAppPage from "./Pages/Installed/Installed-app-page.jsx";
 import NotFound from "./Pages/not-found.jsx";
 import AppNotFound from "./Pages/app-not-found.jsx";
 import AppCountContext from "./context/appSearchResultCount.jsx";
 import AppDetailsPage from "./Pages/AppDetails/App-info-page.jsx";
 import GloabalError from "./Pages/Global-components/GloabalError.jsx";
+import Hompage from "./Pages/home/Homepage.jsx";
+import AllApps from "./Pages/AllApps/All-apps-page.jsx";
 
 const router = createBrowserRouter([
     {

@@ -43,26 +43,40 @@ const InstalledAppList = ({ appListPromise }) => {
 
         switch (type) {
             case 'dlAsc':
-                setAppData([...AppDataList].sort((a, b) => a.downloads - b.downloads))
+                toast.success('Sorted by downloads (↑)');
+                setAppData([...AppDataList].sort((a, b) => a.downloads - b.downloads));
                 break;
+
             case 'dlDsc':
-                setAppData([...AppDataList].sort((a, b) => b.downloads - a.downloads))
+                toast.success('Sorted by downloads (↓)');
+                setAppData([...AppDataList].sort((a, b) => b.downloads - a.downloads));
                 break;
+
             case 'asc':
-                setAppData([...AppDataList].sort((a, b) => a.size - b.size))
+                toast.success('Sorted by size (↑)');
+                setAppData([...AppDataList].sort((a, b) => a.size - b.size));
                 break;
+
             case 'dsc':
-                setAppData([...AppDataList].sort((a, b) => b.size - a.size))
+                toast.success('Sorted by size (↓)');
+                setAppData([...AppDataList].sort((a, b) => b.size - a.size));
                 break;
+
             case 'ascAlpha':
-                setAppData([...AppDataList].sort((a, b) => a.title.toLowerCase().localeCompare(b.title.toLowerCase())))
+                toast.success('Sorted A → Z');
+                setAppData([...AppDataList].sort((a, b) => a.title.toLowerCase().localeCompare(b.title.toLowerCase())));
                 break;
+
             case 'dscAlpha':
-                setAppData([...AppDataList].sort((a, b) => b.title.toLowerCase().localeCompare(a.title.toLowerCase())))
+                toast.success('Sorted Z → A');
+                setAppData([...AppDataList].sort((a, b) => b.title.toLowerCase().localeCompare(a.title.toLowerCase())));
                 break;
+
             default:
+                toast.info('Sorting reset');
                 break;
         }
+
     }
 
 

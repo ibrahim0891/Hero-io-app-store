@@ -1,8 +1,9 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react-hooks/rules-of-hooks */
 import { use, useEffect } from "react";
 import AppCard from "../../Global-components/App-card";
 import { useCountContext } from "../../../context/appSearchResultCount";
-import toast from "react-hot-toast";
+
 
 const AppDisplaySection = ({ searchPromise }) => {
     let result = use(searchPromise);

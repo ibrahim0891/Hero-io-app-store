@@ -9,10 +9,15 @@ function App() {
         <div className='bg-gray-100 flex flex-col min-h-screen '>
             <Nav />
             <Outlet />
-            <MobileNav/>
+            <MobileNav />
             <Footer />
 
-            <div><Toaster position="bottom-center" /></div>
+            <div>
+                <Toaster position="top-center" containerClassName="p-12" toastOptions={{
+                    duration: 2000,
+                    className : 'px-6 py-3 bg-green-500'
+                }} />
+            </div>
         </div>
     );
 }

@@ -3,14 +3,14 @@ import "ldrs/react/Ring.css";
 import 'ldrs/react/Zoomies.css'
 import { Zoomies } from 'ldrs/react'
 
-import {TailChase} from 'ldrs/react'
+import { TailChase } from 'ldrs/react'
 import 'ldrs/react/TailChase.css'
 
 
 
-const LoadingRing = ({color}) => {
+const LoadingRing = ({ color }) => {
     return (
-        <div className="container-center flex items-center justify-center w-full aspect-square md:aspect-[2/1] cursor-progress ">
+        <div className="container-center flex flex-col items-center justify-center my-80 backdrop-blur-md w-full cursor-progress ">
             <Ring
                 size='40'
                 stroke='5'
@@ -18,12 +18,13 @@ const LoadingRing = ({color}) => {
                 speed='2'
                 color={color ?? '#863dfd'}
             />
+            <p className="my-6 text-center"> Thinking...</p>
         </div>
     );
 };
-const LoadingZoomie = ({color}) => {
+const LoadingZoomie = ({ color }) => {
     return (
-        <div className="container-center flex items-center justify-center w-full aspect-square md:aspect-[2/1] cursor-progress ">
+        <div className="container-center flex flex-col items-center justify-center my-80 backdrop-blur-md w-full cursor-progress ">
             <Zoomies
                 size="150"
                 stroke="5"
@@ -31,13 +32,14 @@ const LoadingZoomie = ({color}) => {
                 speed="1.4"
                 color={color ?? '#863dfd'}
             />
+            <p className="my-6 text-center"> Thinking...</p>
         </div>
     );
 };
 
-const LoadingTailChase = ({color}) => {
+const LoadingTailChase = ({ color }) => {
     return (
-        <div className="container-center flex items-center justify-center w-full aspect-square md:aspect-[2/1] cursor-progress ">
+        <div className="container-center flex items-center justify-center my-80 backdrop-blur-md w-full cursor-progress ">
             <TailChase
                 size="40"
                 speed="1.75"
@@ -48,6 +50,6 @@ const LoadingTailChase = ({color}) => {
 };
 
 let Loading = {
-    LoadingRing , LoadingZoomie , LoadingTailChase
+    LoadingRing, LoadingZoomie, LoadingTailChase
 }
 export default Loading;

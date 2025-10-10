@@ -5,7 +5,7 @@ import { getTrendingApps } from "../../../Data/getTrendingApps";
 import AppCard from "../../Global-components/App-card";
 import { Link } from "react-router";
 
-let trendingAppsPromise = getTrendingApps(8 , 4000);
+let trendingAppsPromise = getTrendingApps(8 );
 
 const TrendingApps = () => {
     const trendingAppList = use(trendingAppsPromise);

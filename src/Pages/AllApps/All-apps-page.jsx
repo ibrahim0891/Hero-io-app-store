@@ -23,7 +23,7 @@ const AllApps = () => {
             />
 
             <div className='flex flex-col-reverse md:flex-row gap-4 items-center justify-between my-10'>
-                <ResultCount/>
+                <ResultCount />
                 <form className=''>
                     <div className='flex items-center justify-center border border-gray-300 bg-white rounded-md px-5'>
                         <Search size={24} color='#999492' />
@@ -37,11 +37,11 @@ const AllApps = () => {
                     </div>
                 </form>
             </div>
-            <Suspense fallback={<Loading.LoadingZoomie />}>
+            <Suspense fallback={<Loading.LoadingRing />}>
                 <AppDisplaySection
                     searchPromise={
                         query.length > 0
-                            ? searchAppByTitle(query, 300)
+                            ? searchAppByTitle(query, 500)
                             : getAllApps()
                     }
                 ></AppDisplaySection>
