@@ -52,17 +52,17 @@ const AppDetails = ({ appPromise }) => {
                     <div className='flex items-center gap-8 justify-center md:justify-start'>
                         <div className='space-y-2 *:mx-auto md:*:mx-0'>
                             <img className='w-7 aspect-square' src="/assets/icon-downloads.png" alt="" />
-                            <p className='text-xs'>Downloads</p>
+                            <p className='text-xs text-center'>Downloads</p>
                             <p className='font-bold text-center md:text-left text-2xl'>{aveta(downloads)}</p>
                         </div>
                         <div className='space-y-2 *:mx-auto md:*:mx-0'>
                             <img className='w-7 aspect-square' src="/assets/icon-ratings.png" alt="" />
-                            <p className='text-xs'>Avarage Rating</p>
+                            <p className='text-xs text-center'>Avarage Rating</p>
                             <p className='font-bold text-center md:text-left text-2xl'>{ratingAvg}</p>
                         </div>
                         <div className='space-y-2 *:mx-auto md:*:mx-0'>
                             <img className='w-7 aspect-square' src="/assets/icon-review.png" alt="" />
-                            <p className='text-xs'>Total Reviews</p>
+                            <p className='text-xs text-center'>Total Reviews</p>
                             <p className='font-bold text-center md:text-left text-2xl'>{aveta(reviews)}</p>
                         </div>
                     </div>
