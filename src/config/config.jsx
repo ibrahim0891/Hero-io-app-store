@@ -5,7 +5,7 @@ import { CirclesFourIcon, DownloadSimpleIcon, HouseIcon, SquaresFourIcon } from 
 let config = {
     // baseUrl: "http://localhost:5173",
     baseUrl: "https://hero-io-app-store-six.vercel.app",
-    loadingDelay: Math.random() * (2000 - 1000) + 1000,
+    loadingDelay: Math.random() * (1500 - 500) + 500,
     navLinks: [
         {
             path: "/",
