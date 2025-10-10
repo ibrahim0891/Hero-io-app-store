@@ -9,7 +9,7 @@ const Nav = () => {
     const { navLinks } = config
     return (
         <div className="bg-white/80 backdrop-blur-lg sticky top-0 z-50">
-            <div className='flex items-center justify-between py-4 container-center '>
+            <div className='flex items-center justify-between py-2.5 container-center '>
                 <Link to={"/"}>
                     <Logo />
                 </Link>
@@ -31,7 +31,7 @@ const Nav = () => {
 
                 <a href="https://github.com/ibrahim0891" title="Visit GitHub Profile">
                     <Button className={'flex items-center justify-center gap-4'}>
-                        <GithubIcon />
+                        <GithubIcon size={16} />
                         <span className="hidden sm:inline"> Contribute</span>
                     </Button>
                 </a>

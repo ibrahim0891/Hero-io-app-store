@@ -1,16 +1,87 @@
-# React + Vite
+# 🦸‍♂️ Hero.io  
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Hero.io** is a web application built with **React** to practice **React Router** and **state management** concepts (both local and global).  
+The project focuses on clean, consistent, and responsive UI design while demonstrating practical React skills.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🌐 Live Preview  
+👉 [Hero.io](https://hero-io-app-store-six.vercel.app/)
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🧭 Overview  
 
-## Expanding the ESLint configuration
+Hero.io works like a simple app store where users can browse, search, install, and manage apps.  
+It’s designed to show how React components, routing, and state interact in a real-world example.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🚀 Features  
+
+- **Home Page** – A clean landing page featuring a “Trending Apps” section that displays the top 5 apps from the database.  
+- **App Page** – Lists all apps available in the store with a live count beside the search bar.  
+- **Live Search** – A responsive search bar that filters results instantly as the user types.  
+- **Dynamic Count** – Displays the number of search results in real time.  
+- **App Details** – Click any app card to view detailed information about that app.  
+- **Install/Uninstall** – Users can install or uninstall apps with a single click.  
+- **Installed Apps Section** – Displays all installed apps in the order they were added.  
+- **Sorting Options** – Sort installed apps by:  
+  - Most Downloads → Least Downloads  
+  - Least Downloads → Most Downloads  
+  - Size (Ascending)  
+  - Size (Descending)  
+  - A → Z  
+  - Z → A  
+- **Responsive Design** – Fully optimized for mobile, tablet, and desktop.
+
+---
+
+## 🧰 Technologies Used  
+
+| Library / Framework | Purpose                |
+| ------------------- | ---------------------- |
+| **React**           | UI development         |
+| **React Router**    | Navigation and routing |
+| **React Hot Toast** | Toast notifications    |
+| **Ldrs by Uiball**  | Loading spinners       |
+| **Axios**           | Data fetching          |
+| **JSON**            | Mock data source       |
+
+---
+
+## ⚙️ Installation and Setup  
+
+Follow the steps below to run the project locally:
+
+1. **Clone this repository**  
+```bash
+git clone <repository-url>
+```
+
+---
+
+## ⚙️ Installation and Setup  
+
+Follow the steps below to run the project locally:
+
+1. **Clone this repository**  
+```bash
+git clone https://github.com/ibrahim0891/Hero-io-app-store
+```
+
+2. Navigate to the project folder
+```bash
+cd hero.io
+```
+
+3. Install dependencies
+```bash
+npm install
+```
+
+4. Run the development server
+   
+```bash
+npm run dev
+```

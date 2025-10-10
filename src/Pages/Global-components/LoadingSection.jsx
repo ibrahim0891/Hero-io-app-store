@@ -8,31 +8,31 @@ import 'ldrs/react/TailChase.css'
 
 
 
-const LoadingRing = ({ color }) => {
+const LoadingRing = ({ color, size, label, className }) => {
     return (
-        <div className="container-center flex flex-col items-center justify-center my-80 backdrop-blur-md w-full cursor-progress ">
+        <div className={`${className} container-center flex flex-col items-center justify-center my-80 backdrop-blur-md w-full cursor-progress `}>
             <Ring
-                size='40'
+                size={size ?? 40}
                 stroke='5'
                 bgOpacity='0'
                 speed='2'
                 color={color ?? '#863dfd'}
             />
-            <p className="my-6 text-center"> Thinking...</p>
+            <p className="my-6 text-center"> {label ?? 'Loading...'} </p>
         </div>
     );
 };
-const LoadingZoomie = ({ color }) => {
+const LoadingZoomie = ({ color, size, label, className }) => {
     return (
-        <div className="container-center flex flex-col items-center justify-center my-80 backdrop-blur-md w-full cursor-progress ">
+        <div className={`${className} container-center flex flex-col items-center justify-center my-80 backdrop-blur-md w-full cursor-progress `}>
             <Zoomies
-                size="150"
+                size={size ?? 150}
                 stroke="5"
                 bgOpacity="0.1"
                 speed="1.4"
                 color={color ?? '#863dfd'}
             />
-            <p className="my-6 text-center"> Thinking...</p>
+            <p className="my-6 text-center"> {label ?? 'Loading..'}.</p>
         </div>
     );
 };
